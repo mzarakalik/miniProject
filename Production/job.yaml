@@ -1,17 +1,12 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-type: command
-name: har-classification-20241211
-display_name: "HAR Classification Job"
 code: .
-command: python model.py --data_path ${{ inputs.training_data }} --model_output ${{ outputs.model_output }}
+command: python model.py --trainingdata ${{inputs.training_data}}
+
+environment: azureml://registries/azureml/environments/sklearn-1.1/versions/14
+compute: MiniProject
+experiment_name: har-project
+description: Human Activity Recognition classification
 inputs:
   training_data:
     type: uri_file
     path: azureml:har:1
-outputs:
-  model_output:
-    type: mlflow_model
-environment: azureml://registries/azureml/environments/sklearn-1.1/versions/17
-compute: MiniProject
-experiment_name: har-project
-description: Human Activity Recognition (HAR) classification project using scikit-learn
