@@ -3,7 +3,7 @@ type: command
 name: har-classification-20241212
 display_name: "HAR Classification Job"
 code: .
-command: python model.py --trainingdata ${{ inputs.training_data }}
+command: python model.py --data_path ${{ inputs.training_data }}
 inputs:
   training_data:
     type: uri_file
