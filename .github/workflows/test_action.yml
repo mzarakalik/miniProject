@@ -12,7 +12,6 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
-
     steps:
       # Step 1: Checkout the code
       - name: Checkout repository code
