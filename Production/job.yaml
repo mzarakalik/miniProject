@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 type: command
-name: har-classification
+name: har-classification-20241212
 display_name: "HAR Classification Job"
 code: .
 command: python model.py --trainingdata ${{ inputs.training_data }}
